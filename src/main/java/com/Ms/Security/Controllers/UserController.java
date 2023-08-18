@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,6 +17,7 @@ public class UserController {
     private final UserRepository userRepository;
     private final AuthenticationManager authenticationManager;
     private final JwtUtilities jwtUtilities;
+
     @Autowired
     public UserController(UserRepository userRepository, AuthenticationManager authenticationManager, JwtUtilities jwtUtilities) {
         this.userRepository = userRepository;
