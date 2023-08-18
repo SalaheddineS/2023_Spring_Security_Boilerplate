@@ -42,7 +42,6 @@ public class UserController {
         user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
         return this.userRepository.save(user);
     }
-
     @PostMapping("login")
     public String login(@RequestBody User user){
         authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(user.getUsername(),user.getPassword()));
